@@ -12,6 +12,10 @@ public class Dev {
     private Set<Conteudo> conteudosInscritos = new LinkedHashSet<>();
     private Set<Conteudo> conteudosConcluidos = new LinkedHashSet<>();
 
+    public Dev(String nome){
+        this.nome = nome;
+    }
+
     public void inscreverBootcamp(Bootcamp bootcamp){
         this.conteudosInscritos.addAll(bootcamp.getConteudos());
         bootcamp.getDevsInscritos().add(this);
@@ -22,6 +26,7 @@ public class Dev {
         if(conteudo.isPresent()) {
             this.conteudosConcluidos.add(conteudo.get());
             this.conteudosInscritos.remove(conteudo.get());
+            System.out.println(nome+" progrediu!");
         } else {
             System.err.println("Você não está matriculado em nenhum conteúdo!");
         }
@@ -32,6 +37,13 @@ public class Dev {
             .stream()
             .mapToDouble(Conteudo::calcularXp)
             .sum();
+    }
+
+    @Override
+    public String toString() {
+        return "Dev {\n" +
+                "    nome = "+getNome()+'\'' +
+                "\n}\n";
     }
 
     @Override

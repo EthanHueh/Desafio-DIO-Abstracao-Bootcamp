@@ -2,6 +2,7 @@ package br.com.dio.desafio.dominio;
 
 import java.time.LocalDate;
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.LinkedHashSet;
 import java.util.Objects;
 import java.util.Set;
@@ -28,6 +29,25 @@ public class Bootcamp {
 
     public void adicionar(Conteudo conteudo) {
         conteudos.add(conteudo);
+    }
+
+    @Override
+    public String toString() {
+        Iterator<Conteudo> ic = conteudos.iterator();
+        Iterator<Dev> id = devsInscritos.iterator();
+        
+
+        String msg = "Conteudos do Bootcamp:\n";
+        while (ic.hasNext()){
+            msg += ic.next();
+        }
+
+        msg += "\n\nDevs Inscritos:\n";
+        while(id.hasNext()){
+            msg += id.next();
+        }
+
+        return msg;
     }
 
     @Override
