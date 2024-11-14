@@ -6,6 +6,10 @@ import java.util.LinkedHashSet;
 import java.util.Objects;
 import java.util.Set;
 
+import lombok.AccessLevel;
+import lombok.Getter;
+import lombok.Setter;
+
 @Getter
 @Setter
 public class Bootcamp {
@@ -22,8 +26,8 @@ public class Bootcamp {
     @Setter(AccessLevel.NONE)
     private final LocalDate dataFinal = dataInicial.plusDays(45);
 
-    public void adicionar(Curso curso) {
-        conteudos.add(curso);
+    public void adicionar(Conteudo conteudo) {
+        conteudos.add(conteudo);
     }
 
     @Override

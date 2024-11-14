@@ -1,5 +1,9 @@
 package br.com.dio.desafio.dominio;
 
+import lombok.AccessLevel;
+import lombok.Getter;
+import lombok.Setter;
+
 @Getter
 @Setter
 public abstract class Conteudo {

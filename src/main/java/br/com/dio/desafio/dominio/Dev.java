@@ -2,6 +2,9 @@ package br.com.dio.desafio.dominio;
 
 import java.util.*;
 
+import lombok.Getter;
+import lombok.Setter;
+
 @Getter
 @Setter
 public class Dev {
